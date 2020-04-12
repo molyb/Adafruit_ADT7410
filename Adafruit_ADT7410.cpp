@@ -44,7 +44,7 @@ Adafruit_ADT7410::Adafruit_ADT7410() {}
  */
 boolean Adafruit_ADT7410::begin(uint8_t addr) {
   _i2caddr = addr;
-  Wire.begin();
+  Wire.begin(12, 13);
 
   uint8_t id = read8(ADT7410_REG__ADT7410_ID) & 0xF8;
   if (id != 0xC8) {
